@@ -5,7 +5,7 @@ const shortid = require("shortid");
 
 
 const Auth = require("./Auth.json");
-const Token = Auth.Token;
+const Token = process.env.TOKEN
 var JsonLoaded = false;
 
 function LoadConfig() {
