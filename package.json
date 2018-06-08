@@ -2,19 +2,17 @@
   "//1": "describes your app and its dependencies",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-  "name": "hello-sqlite",
+  "name": "Printnet",
   "version": "0.0.1",
-  "description": "A simple Node app with SQLite as a database management system, instantly up and running.",
+  "description": "Printnet Discord Bot",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js && node Bot.js"
   },
   "dependencies": {
     "express": "^4.16.3",
     "sqlite3": "^4.0.0",
-    "node-fetch": "^2.1.2",
-    "discord.js": "^11.3.2",
-    "fs-extra": "^6.0.1"
+    "discord.js": "^11.3.2"
   },
   "engines": {
     "node": "8.x"

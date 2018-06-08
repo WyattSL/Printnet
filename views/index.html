@@ -10,37 +10,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Welcome to Glitch!</title>
+    <title>Printnet Website</title>
+    <script>
+      if (location.protocol != 'https:') {
+       location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+      }
+    </script>
     <meta name="description" content="A cool thing made with Glitch">
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="discord.VERSION.min.js"></script>
-    <script type="text/javascript" src="./Bot.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <header>
-      Welcome to Printnet!
+    <header id="bold">
+      Printnet - A Discord Bot
     </header>
+    <h1>
+      WHAT?! You don't have PrintNET?!
+    </h1>
+    <h1>
+      THEN HURRY! GET IT NOW!
+    </h1>
+    <button onclick="location.href='https://www.printnet.glitch.me/invite'">Get Printnet</button>
+    <h2>
+      Do you Like Printnet? Join our discord Server!
+    </h2>
+    <button id="icon-added" onclick="location.href='https://www.printnet.glitch.me/discord'">
+      Join Discord 
+    </button>
     <h3>
-      Click the button below to login to your Discord Account
+      Do you use github? Or just wanna see the code? Either way,
     </h3>
-    <button onclick="location.href='https://discordapp.com/api/oauth2/authorize?client_id=448646122693591046&redirect_uri=https%3A%2F%2Fwww.printnet.glitch.me%2Fserver&response_type=code&scope=guilds%20guilds.join%20email%20identify'">Login!</button>
-    <img src="https://cdn.glitch.com/19aedbf5-acdd-4cfb-9aa0-47a372a1c20b%2FPrintnet.png?1526842384995">
-    <h4>
-      Or are you already logged in? If so, Click the NEXT Button Below!
-    </h4>
-    <button onclick="location.href='https://printnet.glitch.me/server'">NEXT</button>
-    <h5>
-      PSST! Did you Even invite Printnet Yet?
-    </h5>
-    <button onclick="location.href='https://discordapp.com/api/oauth2/authorize?client_id=447811226202931204&permissions=2096360695&scope=bot'">Invite Printnet!</button>
-    <p>
-      © Copyright 2018 Printnet
-    </p>
+    <button onclick="location.href='https://printnet.glitch.me/github'">
+      Goto Github!
+    </button>
+    <script src="/client.js"></script>
+    <footer id="italic">Copyright 2018 - https://www.printnet.glitch.me</footer>
+    <script src="/ohno.js"></script>
+    <img src="https://cdn.glitch.com/eecabd81-4dbb-4814-972f-602816fb83e7%2FPrintnet.png?1527641793163">
   </body>
 </html>

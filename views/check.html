@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script>
+      if (location.protocol != 'https:') {
+       location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+      }
+    </script>
+  </head>
+  <body onload="Redirect()">
+    <script src="/check.js"></script>
+    <link rel="stylesheet" href="/check.css">
+    <noscript>
+      <header> Well, This was erm, Unexpected. </header>
+      <h5>Error Code: 426</h5>
+      <h3>
+        Please try one of the fixes below.
+      </h3>
+      <ul>
+        <p>
+          - Change to a different web browser
+        </p>
+        <p>
+          - Allow printnet.glitch.me Access to Javascript
+        </p>
+        <p>
+          - Try again
+        </p>
+      </ul>
+      <h4>
+        Feeling Confident?
+      </h4>
+      <button onclick="Redirect()">
+        Try Again!
+      </button>
+    </noscript>
+  </body>
+</html>

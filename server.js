@@ -3,8 +3,7 @@
 
 // init project
 var express = require('express');
-var url = require('url');
-var q = url.parse('url.href');var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -15,29 +14,40 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // init sqlite db
-var fs = require('fs-extra');
+var fs = require('fs');
+var dbFile = './.data/sqlite.db';
+var exists = fs.existsSync(dbFile);
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database(dbFile);
 
-// if ./.data/sqlite.db does not exist, create it, otherwise print records to console
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
+  response.sendFile(__dirname + '/views/check.html');
 });
 
 app.get("/home", function (request, response) {
+  response.sendFile(__dirname + '/views/check.html');
+});
+
+app.get("/index", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
-app.get("/server", function (request, response) {
-  response.sendFile(__dirname + '/views/server.html');
+app.get("/invite", function (request, response) {
+  response.sendFile(__dirname + '/views/invite.html');
 });
 
-app.get("/edit", function (request, response) {
-  response.sendFile(__dirname + '/views/edit.html');
+app.get("/discord", function (request, response) {
+  response.sendFile(__dirname + '/views/discord.html');
 });
 
-// endpoint to get all the dreams in the database
-// currently this is the only endpoint, ie. adding dreams won't update the database
-// read the sqlite3 module docs and try to add your own! https://www.npmjs.com/package/sqlite3
+app.get("/github", function (request, response) {
+  response.sendFile(__dirname + '/views/github.html');
+});
+
+app.get("/*", function (request, response) {
+  response.sendFile(__dirname + '/views/404.html');
+});
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {

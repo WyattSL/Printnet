@@ -1,0 +1,23 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  margin: auto;
+  display: block;
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Mina', sans-serif;
+}
+
+header {
+  font-size: 30px;
+  border-bottom-style: double;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+ul {
+  border-top-style: double;
+  border-bottom-style: double;
+}
