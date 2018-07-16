@@ -1,3 +1,3 @@
 function Redirect() {
-  location.href='https://www.printnet.glitch.me/index'
+  location.href='https://printnet.glitch.me/index'
 }
