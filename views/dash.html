@@ -1,0 +1,76 @@
+<html>
+  <body>
+    <link rel="stylesheet" href="/dash.css">
+    <h1>
+      Dashboard
+    </h1>
+    <h2 id="user">
+      Hello (LOADING...)
+    </h2>
+    <div id="wrapper1">
+    <h3>
+      Please Select the server you would like the Configure.
+    </h3>
+    <select id="guilds"></select>
+    <button id="Confirm" onclick="gotodash()">
+      Configure Guild!
+    </button>
+    </div>
+    <script>
+      const gotodash = async (url) => {
+        var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+  
+        const token = queryString.split('=')[1]
+        const index = document.getElementById('guilds').selectedIndex;
+        const options = document.getElementById("guilds").options;
+        const guild = options[index];
+        const guildid = guild.value;
+        window.location = `/dashboard?token=${token}&server=${guildid}`;
+      };
+function gettoken(url) {
+
+  // get query string from url (optional) or window
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+  
+  const token = queryString.split('=')[1]
+  console.log(token)
+  
+  getuser(token)
+}
+
+gettoken(window.location.href)
+
+async function getuser(token) {
+  if (!token) window.location = '/login';
+  console.log("Function Called")
+  let user = await fetch(`https://discordapp.com/api/users/@me`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }, 
+  });
+  let guilds = await fetch(`https://discordapp.com/api/users/@me/guilds`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }, 
+  });
+  if (!user || !guilds) {
+    window.location = `/login`
+  };
+  guilds = await guilds.json();
+  guilds = guilds.filter(g => g.owner == true);
+  guilds = guilds.map(g => `<option value="${g.id}">${g.name}</option>`).sort();
+  user = await user.json();
+  console.log(guilds);
+  console.log(user);
+ // console.log(await response.user());
+  document.getElementById('user').innerHTML = `Hello ${user.username}!`;
+  document.getElementById('guilds').innerHTML += `<option value="sg" disabled selected="selected">Choose A Guild</option>${guilds.join('\n')}`;
+  console.log("Set Text")
+}
+    </script>
+  </body>
+</html>

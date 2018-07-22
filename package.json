@@ -7,12 +7,16 @@
   "description": "Printnet Discord Bot",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js && node Bot.js"
   },
   "dependencies": {
     "express": "^4.16.3",
-    "sqlite3": "^4.0.0",
-    "discord.js": "^11.3.2"
+    "sqlite3": "^4.0.2",
+    "discord.js": "^11.3.2",
+    "node-fetch": "^2.1.2",
+    "btoa": "^1.2.1",
+    "quick.db": "^6.3.2"
   },
   "engines": {
     "node": "8.x"

@@ -1,0 +1,38 @@
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+input {
+  margin-right: 15px;
+  border: 3px solid #fff;
+  border-radius: 12px;
+}
+
+select {
+  background-color: #00000f;
+  color: white;
+  text-align: center;
+}
+
+option {
+  color: white;
+  text-align: center;
+}
+
+button {
+  font-size: 15px;
+  border-radius: 12px;
+  box-shadow: 2px 2px gray;
+}
+
+button:hover {
+  font-size: 17px;
+}
+
+button:active {
+  box-shadow: 0px 0px gray;
+  font-size: 16px;
+}

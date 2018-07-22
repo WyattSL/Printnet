@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
